@@ -41,4 +41,10 @@ public class Song {
         rating= stars/reviews;
         return rating;
     }
+    public void print(){
+        System.out.println(codigo+ "--"+ nombre+ "--"+ precio+ "--"+ rating);
+    }
+    public boolean validar(int c){
+        return c== codigo;
+    }
 }
