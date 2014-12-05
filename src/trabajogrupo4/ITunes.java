@@ -10,5 +10,53 @@ package trabajogrupo4;
  * @author zerokull
  */
 public class ITunes {
+    private Song[] songs;
+    public static int MAX_SONGS = 20;
+    private int cont=0;
+
+    public ITunes() {
+        songs = new Song[MAX_SONGS];
+    }
     
+    public int validarCodigo(int code){
+        for (int i = 0; i < cont; i++) {
+            if(songs[i] != null && songs[i].validar(code)){
+                return i;
+            }
+        }
+        return -1;
+    }
+    
+    public int searchIndex(boolean nullObject, int code){
+        for (int i = 0; i < songs.length; i++) {
+            if(nullObject){
+             if(songs[i]==null){
+                return i;
+            }   
+            }else{
+                if(songs[i] != null && songs[i].validar(code)){
+                    return i;
+                }
+            }
+            
+        }
+        return -1;
+    }
+    
+    public boolean addSong(int codigo, String nombre, double precio){
+        int unico = validarCodigo(codigo);
+        if(unico==-1 && cont<=songs.length){
+            int index = searchIndex(true, 0);
+            if(index>=0){
+                songs[index] = new Song(nombre, codigo, precio);
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public Song searchSong(int code){
+        
+        return null;
+    }
 }
