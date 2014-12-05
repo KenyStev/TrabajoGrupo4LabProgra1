@@ -24,6 +24,7 @@ public class ITunes {
                 return i;
             }
         }
+        
         return -1;
     }
     
@@ -45,7 +46,7 @@ public class ITunes {
     
     public boolean addSong(int codigo, String nombre, double precio){
         int unico = validarCodigo(codigo);
-        if(unico==-1 && cont<=songs.length){
+        if(unico==-1 && cont<songs.length){
             songs[cont++] = new Song(nombre, codigo, precio);
             return true;
         }

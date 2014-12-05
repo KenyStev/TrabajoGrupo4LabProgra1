@@ -43,7 +43,7 @@ public class Song {
         return rating;
     }
     public void print(){
-        System.out.println(codigo+ "--"+ nombre+ "--"+ precio+ "--"+ rating);
+        System.out.println("Codigo: "+codigo+ ", Nombre: "+ nombre+ ", Precio: "+ precio+ ", Rating: "+ rating);
     }
     public boolean validar(int c){
         return c== codigo;

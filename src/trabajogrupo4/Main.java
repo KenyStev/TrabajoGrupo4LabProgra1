@@ -13,10 +13,18 @@ public class Main {
     public static void main(String[] args){
         
         ITunes jdk= new ITunes();
-        jdk.addSong(1, "fma", 5);
-        jdk.addSong(21, "Nada", 20.0);
-        jdk.rateSong(5,21);
-        jdk.rateSong(3,1);
+//        jdk.addSong(1, "fma", 5);
+//        jdk.addSong(21, "Nada", 20.0);
+//        jdk.rateSong(5,21);
+//        jdk.rateSong(3,1);
+//        jdk.printSongs();
+        
+        for (int i = 0; i < 40; i++) {
+            jdk.addSong(i, "song_"+i, i*1.5);
+            jdk.rateSong(i, i);
+        }
+        
+        System.out.println();
         jdk.printSongs();
     }
 }
