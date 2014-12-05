@@ -46,17 +46,36 @@ public class ITunes {
     public boolean addSong(int codigo, String nombre, double precio){
         int unico = validarCodigo(codigo);
         if(unico==-1 && cont<=songs.length){
-            int index = searchIndex(true, 0);
-            if(index>=0){
-                songs[index] = new Song(nombre, codigo, precio);
+//            int index = searchIndex(true, 0);
+//            if(index>=0){
+                songs[cont++] = new Song(nombre, codigo, precio);
                 return true;
-            }
+//            }
         }
         return false;
     }
     
     public Song searchSong(int code){
-        
+        int index = searchIndex(false, code);
+        if(index>=0){
+            return songs[index];
+        }
         return null;
+    }
+    
+    public void rateSong(int cant, int code){
+        Song temp = searchSong(code);
+        if(temp!=null){
+            temp.addStars(cant);
+            temp.print();
+        }else{
+            System.out.println("Song no existe!");
+        }
+    }
+    
+    public void printSongs(){
+        for (int i = 0; i < cont; i++) {
+            songs[i].print();
+        }
     }
 }
