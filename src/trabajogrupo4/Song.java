@@ -39,5 +39,6 @@ public class Song {
     }
     public double songRating(){
         rating= stars/reviews;
+        return rating;
     }
 }
