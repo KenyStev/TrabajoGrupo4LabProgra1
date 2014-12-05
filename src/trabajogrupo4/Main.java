@@ -14,8 +14,9 @@ public class Main {
         
         ITunes jdk= new ITunes();
         jdk.addSong(1, "fma", 5);
-        jdk.rateSong(3,2);
-        jdk.printSong();
-        
+        jdk.addSong(21, "Nada", 20.0);
+        jdk.rateSong(5,21);
+        jdk.rateSong(3,1);
+        jdk.printSongs();
     }
 }

@@ -66,8 +66,9 @@ public class ITunes {
     public void rateSong(int cant, int code){
         Song temp = searchSong(code);
         if(temp!=null){
-            temp.addStars(cant);
-            temp.print();
+            int index = searchIndex(false, code);
+            songs[index].addStars(cant);
+            songs[index].print();
         }else{
             System.out.println("Song no existe!");
         }

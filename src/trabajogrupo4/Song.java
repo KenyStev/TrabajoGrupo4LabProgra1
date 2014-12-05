@@ -32,6 +32,7 @@ public class Song {
         if (st<= 5 && st>=0){
             stars+=st;
             reviews++;
+            songRating();
         }
         else{
             System.out.println("Rating invalida");
